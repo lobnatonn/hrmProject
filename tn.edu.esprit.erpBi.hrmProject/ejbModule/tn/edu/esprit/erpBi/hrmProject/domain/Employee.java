@@ -21,6 +21,7 @@ public class Employee implements Serializable {
 		super();
 	}   
 	@Id    
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getIdEmployee() {
 		return this.idEmployee;
 	}
