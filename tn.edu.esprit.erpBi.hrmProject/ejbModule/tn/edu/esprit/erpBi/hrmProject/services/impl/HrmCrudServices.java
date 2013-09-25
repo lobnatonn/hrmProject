@@ -43,19 +43,29 @@ public class HrmCrudServices implements HrmCrudServicesRemote,
 	@Override
 	public void updateEmployee(Employee employee) {
 		entityManager.merge(employee);
-		
+
 	}
 
 	@Override
 	public void deleteEmployee(int idEmployee) {
 		entityManager.remove(findEmployeeById(idEmployee));
-		
+
 	}
 
 	@Override
 	public List<Employee> findAllEmployees() {
-	String jpql="select e from Employee e";
-	Query query=entityManager.createQuery(jpql);
+		String jpql = "select e from Employee e";
+		Query query = entityManager.createQuery(jpql);
+		return query.getResultList();
+	}
+
+	@Override
+	public List<Employee> findAllEmployeeByName(String nameEmployee) {
+
+		String jpql = "select e from Employee e where e.nameEmployee =:param";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("param", nameEmployee);
+		System.out.println(query);
 		return query.getResultList();
 	}
 

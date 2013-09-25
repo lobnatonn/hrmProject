@@ -17,4 +17,6 @@ public interface HrmCrudServicesRemote {
 	public void deleteEmployee(int idEmployee);
 
 	public List<Employee> findAllEmployees();
+
+	public List<Employee> findAllEmployeeByName(String nameEmployee);
 }
