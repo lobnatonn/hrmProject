@@ -10,6 +10,9 @@ import javax.persistence.Query;
 import tn.edu.esprit.erpBi.hrmProject.domain.Employee;
 import tn.edu.esprit.erpBi.hrmProject.domain.Project;
 import tn.edu.esprit.erpBi.hrmProject.domain.identification.User;
+import tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Guest;
+import tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.GuestInfo;
+import tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Wedding;
 import tn.edu.esprit.erpBi.hrmProject.services.interfaces.RealPlatformeServicesLocal;
 import tn.edu.esprit.erpBi.hrmProject.services.interfaces.RealPlatformeServicesRemote;
 
@@ -92,6 +95,16 @@ public class RealPlatformeServices implements RealPlatformeServicesRemote,
 			user = null;
 		}
 		return user;
+	}
+
+	@Override
+	public void addGuestInfo(int idwedding, int idguest, String intiMnin) {
+		Wedding wedding = entityManager.find(Wedding.class, idwedding);
+		Guest guest = entityManager.find(Guest.class, idguest);
+		GuestInfo guestInfo = new GuestInfo(intiMnin, wedding, guest);
+
+		entityManager.persist(guestInfo);
+
 	}
 
 }

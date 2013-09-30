@@ -26,4 +26,6 @@ public interface RealPlatformeServicesRemote {
 
 	public User authenticate(String login, String password);
 
+	public void addGuestInfo(int idwedding, int idguest, String intiMnin);
+
 }

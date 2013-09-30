@@ -13,6 +13,8 @@
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithoutData.Module</class>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Wedding</class>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Guest</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.GuestInfo</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.GuestInfoPk</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true"/>
