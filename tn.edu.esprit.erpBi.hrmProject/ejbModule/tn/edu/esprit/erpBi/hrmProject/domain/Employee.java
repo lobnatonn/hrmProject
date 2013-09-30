@@ -9,6 +9,7 @@ import javax.persistence.*;
  *
  */
 @Entity
+@Table(name="T_EMPLOYEE")
 
 public class Employee implements Serializable {
 
@@ -16,6 +17,8 @@ public class Employee implements Serializable {
 	private int idEmployee;
 	private String nameEmployee;
 	private static final long serialVersionUID = 1L;
+	
+	private Project project;
 
 	public Employee() {
 		super();
@@ -35,6 +38,13 @@ public class Employee implements Serializable {
 
 	public void setNameEmployee(String nameEmployee) {
 		this.nameEmployee = nameEmployee;
+	}
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	public Project getProject() {
+		return project;
+	}
+	public void setProject(Project project) {
+		this.project = project;
 	}
    
 }
