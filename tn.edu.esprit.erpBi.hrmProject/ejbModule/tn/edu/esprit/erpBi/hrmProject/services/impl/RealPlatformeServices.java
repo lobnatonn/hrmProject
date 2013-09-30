@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import tn.edu.esprit.erpBi.hrmProject.domain.Employee;
 import tn.edu.esprit.erpBi.hrmProject.domain.Project;
+import tn.edu.esprit.erpBi.hrmProject.domain.identification.User;
 import tn.edu.esprit.erpBi.hrmProject.services.interfaces.RealPlatformeServicesLocal;
 import tn.edu.esprit.erpBi.hrmProject.services.interfaces.RealPlatformeServicesRemote;
 
@@ -63,6 +64,34 @@ public class RealPlatformeServices implements RealPlatformeServicesRemote,
 
 		entityManager.merge(projectFound);
 
+	}
+
+	@Override
+	public void addUser(User user) {
+		entityManager.persist(user);
+
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+
+		return entityManager.createQuery("select u from User u")
+				.getResultList();
+	}
+
+	@Override
+	public User authenticate(String login, String password) {
+		String jpql = "select u from User u where u.login=:param1 and u.pwd=:param2";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("param1", login);
+		query.setParameter("param2", password);
+		User user;
+		try {
+			user = (User) query.getSingleResult();
+		} catch (Exception e) {
+			user = null;
+		}
+		return user;
 	}
 
 }

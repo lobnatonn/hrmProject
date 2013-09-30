@@ -6,6 +6,8 @@ import javax.naming.NamingException;
 
 import tn.edu.esprit.erpBi.hrmProject.domain.Employee;
 import tn.edu.esprit.erpBi.hrmProject.domain.Project;
+import tn.edu.esprit.erpBi.hrmProject.domain.identification.Admin;
+import tn.edu.esprit.erpBi.hrmProject.domain.identification.Visitor;
 import tn.edu.esprit.erpBi.hrmProject.services.interfaces.RealPlatformeServicesRemote;
 
 public class TestInitPlateforme {
@@ -31,8 +33,20 @@ public class TestInitPlateforme {
 			employee.setProject(project);
 			employee2.setProject(project);
 
+			Admin admin = new Admin();
+			admin.setLogin("admin");
+			admin.setPwd("admin");
+			admin.setRole("superUser");
+			
+			Visitor visitor=new Visitor();
+			visitor.setLogin("visitor");
+			visitor.setPwd("visitor");
+			visitor.setState("regular");
+
 			proxy.addEmployee(employee);
 			proxy.addEmployee(employee2);
+			proxy.addUser(admin);
+			proxy.addUser(visitor);
 
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block

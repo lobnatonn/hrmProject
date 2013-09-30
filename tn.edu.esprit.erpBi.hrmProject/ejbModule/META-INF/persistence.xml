@@ -6,6 +6,13 @@
 		<jta-data-source>java:/hrmDS</jta-data-source>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.Employee</class>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.Project</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.identification.User</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.identification.Admin</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.identification.Visitor</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithoutData.Student</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithoutData.Module</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Wedding</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Guest</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true"/>
