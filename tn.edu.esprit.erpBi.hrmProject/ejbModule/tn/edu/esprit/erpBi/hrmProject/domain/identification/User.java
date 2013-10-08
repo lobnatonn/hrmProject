@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="T_User")
-
+@Inheritance(strategy=InheritanceType.JOINED)
 public class User implements Serializable {
 
 	
@@ -23,7 +23,7 @@ public class User implements Serializable {
 		super();
 	}   
 	@Id   
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	public int getId() {
 		return this.id;
 	}
