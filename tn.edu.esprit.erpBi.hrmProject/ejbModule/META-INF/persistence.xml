@@ -15,6 +15,8 @@
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Guest</class>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.GuestInfo</class>
 		<class>tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.GuestInfoPk</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.MyMessage</class>
+		<class>tn.edu.esprit.erpBi.hrmProject.domain.Incident</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true"/>

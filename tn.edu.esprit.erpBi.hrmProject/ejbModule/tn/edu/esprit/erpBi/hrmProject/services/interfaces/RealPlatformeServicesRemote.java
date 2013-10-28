@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import tn.edu.esprit.erpBi.hrmProject.domain.Employee;
+import tn.edu.esprit.erpBi.hrmProject.domain.MyMessage;
 import tn.edu.esprit.erpBi.hrmProject.domain.Project;
 import tn.edu.esprit.erpBi.hrmProject.domain.identification.User;
 
@@ -27,5 +28,7 @@ public interface RealPlatformeServicesRemote {
 	public User authenticate(String login, String password);
 
 	public void addGuestInfo(int idwedding, int idguest, String intiMnin);
+
+	public boolean sendMessage(MyMessage myMessage);
 
 }

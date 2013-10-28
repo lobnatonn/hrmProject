@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import tn.edu.esprit.erpBi.hrmProject.domain.Employee;
+import tn.edu.esprit.erpBi.hrmProject.domain.MyMessage;
 import tn.edu.esprit.erpBi.hrmProject.domain.Project;
 import tn.edu.esprit.erpBi.hrmProject.domain.identification.User;
 import tn.edu.esprit.erpBi.hrmProject.domain.manyToManyWhithData.Guest;
@@ -107,4 +108,16 @@ public class RealPlatformeServices implements RealPlatformeServicesRemote,
 
 	}
 
+	@Override
+	public boolean sendMessage(MyMessage message) {
+		boolean b = false;
+		try {
+			entityManager.persist(message);
+			b = true;
+		} catch (Exception e) {
+			System.err.println("emm haw fibali ...");
+
+		}
+		return b;
+	}
 }
